@@ -10,6 +10,16 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+from decouple import config
+
+DEEPSEEK_API_URL = config('DEEPSEEK_API_URL')
+DEEPSEEK_API_KEY = config('DEEPSEEK_API_KEY')
+
+from dotenv import load_dotenv
+load_dotenv()  # <- esto carga el .env
+
+import os
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

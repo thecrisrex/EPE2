@@ -1,13 +1,11 @@
+version: '3.8'
+
 services:
-  main-service:
+  web:
     build: .
-    image: deepseek-api
-    container_name: deepseek-container
+    ports:
+      - "8000:8000"
     env_file:
       - .env
     volumes:
       - .:/app
-    ports:
-      - "8000:8000"
-    restart: unless-stopped
-        
